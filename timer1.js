@@ -4,9 +4,8 @@ if (!input) {
   return;
 } 
 
-let goodInput = input.filter(num => typeof(num) !== 'number');
+let goodInput = input.filter(num => !isNaN(num));
 goodInput = goodInput.filter(num => num >= 0);
-console.log(goodInput);
 
 goodInput.forEach((num, index) => {
     num *= 1000;
@@ -14,5 +13,3 @@ goodInput.forEach((num, index) => {
       process.stdout.write('\x07');
     }, num);
 });
-
-// process.stdout.write('\x07');
